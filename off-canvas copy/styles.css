@@ -1,0 +1,116 @@
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    overflow-x: hidden;
+    /* Evitar scroll horizontal al animar */
+}
+
+nav {
+    background: #333;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.menu-btn {
+    display: inline-block;
+    background: #555;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+section {
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f4f4f4;
+}
+
+/* Off Canvas */
+.container {
+    width: 100%;
+    /* Posicionamiento para contener los absolutos si fuera necesario, 
+       pero en este caso usamos fixed/absolute para el panel lateral */
+    position: relative;
+    height: 100vh;
+}
+
+.columna1 {
+    /* Menú lateral oculto en móvil */
+    position: absolute;
+    top: 0;
+    /* Ajustar posición si se quiere debajo del nav o cubriéndolo */
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background: #222;
+    color: #fff;
+    z-index: 1;
+
+    /* Transformación para ocultarlo */
+    transform: translate(-250px, 0);
+    transition: transform 0.3s ease-out;
+}
+
+.columna1.open {
+    /* Clase para mostrarlo */
+    transform: translate(0, 0);
+}
+
+.columna2 {
+    /* Contenido principal */
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-top: 60px;
+    /* Espacio para el nav si es fixed, o simplemente ajuste visual */
+    background: white;
+    transition: transform 0.3s ease-out;
+}
+
+/* Opcional: mover el contenido principal también al abrir el menú */
+/* 
+.columna1.open ~ .columna2 {
+    transform: translate(250px, 0);
+}
+*/
+
+@media (min-width: 600px) {
+    .menu-btn {
+        display: none;
+        /* Ocultar botón en desktop */
+    }
+
+    .container {
+        display: flex;
+        flex-flow: row nowrap;
+    }
+
+    .columna1 {
+        /* Resetear posición para desktop */
+        position: relative;
+        transform: translate(0, 0);
+        /* Siempre visible */
+        width: 30%;
+        height: auto;
+    }
+
+    .columna2 {
+        position: relative;
+        width: 70%;
+        height: auto;
+        padding-top: 20px;
+    }
+}

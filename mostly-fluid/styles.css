@@ -1,0 +1,73 @@
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+nav {
+    background: #333;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+section {
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f4f4f4;
+    margin-bottom: 5px;
+}
+
+/* Mostly Fluid */
+.container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.columna1,
+.columna2,
+.columna3,
+.columna4,
+.columna5 {
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+
+    /* Tablet: Columnas secundarias al 50% */
+    .columna2,
+    .columna3,
+    .columna4,
+    .columna5 {
+        width: 50%;
+    }
+}
+
+@media (min-width: 800px) {
+
+    /* Desktop: Distribución más compleja y contenedor centrado */
+    .columna1 {
+        width: 60%;
+    }
+
+    .columna2 {
+        width: 40%;
+    }
+
+    .columna3,
+    .columna4,
+    .columna5 {
+        width: 33.33%;
+    }
+
+    .container {
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

@@ -1,0 +1,77 @@
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+nav {
+    background: #333;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+section {
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f4f4f4;
+}
+
+/* Column Drop */
+.container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.columna1,
+.columna2,
+.columna3 {
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+
+    /* Primer corte: La columna 1 (contenido) ocupa 60%, la 2 (menu) 40% y se reordenan */
+    .columna1 {
+        width: 60%;
+        order: 2;
+        /* Aparece segundo visualmente */
+    }
+
+    .columna2 {
+        width: 40%;
+        order: 1;
+        /* Aparece primero visualmente (izquierda) */
+    }
+
+    .columna3 {
+        width: 100%;
+        order: 3;
+        /* Se mantiene abajo */
+    }
+}
+
+@media (min-width: 800px) {
+
+    /* Segundo corte: Todas en una fila */
+    .columna1 {
+        width: 60%;
+        /* order se mantiene 2 por defecto o herencia, pero necesitamos asegurarnos */
+        order: 2;
+    }
+
+    .columna2 {
+        width: 20%;
+        order: 1;
+    }
+
+    .columna3 {
+        width: 20%;
+        order: 3;
+    }
+}
