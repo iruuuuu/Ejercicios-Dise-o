@@ -1,0 +1,614 @@
+:root {
+    /* Colors */
+    --bg-color: #D8CFC4;
+    /* Darker beige from reference */
+    --header-bg: #D8CFC4;
+    --text-primary: #4A3B32;
+    /* Brownish text */
+    --text-secondary: #5A5A5A;
+    --accent-orange: #D74108;
+    /* Burnt Orange */
+    --accent-green: #97B090;
+    /* Soft Green */
+    --card-bg: #FFFFFF;
+    --border-color: #E0D8C8;
+
+    /* Typography */
+    --font-heading: 'Inter', sans-serif;
+    /* Adjusted to sans-serif bold for headings per reference */
+    --font-body: 'Inter', sans-serif;
+
+    /* Effects */
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --radius-pill: 50px;
+    --radius-card: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header - Sticky */
+.main-header {
+    background-color: var(--header-bg);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding-bottom: 1rem;
+}
+
+.header-top {
+    display: flex;
+    /* Desktop: Centered per requirements */
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+    padding: 1rem 5% 0.5rem 5%;
+}
+
+.brand-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-text {
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: #4A3B32;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.logo-text span {
+    color: #888;
+}
+
+.logo-circle {
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #4A3B32;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* or contain, depending on if they want the full circle filled or the whole logo visible */
+}
+
+.header-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    margin-top: 0.5rem;
+}
+
+.search-wrapper {
+    position: relative;
+    flex-grow: 0;
+    width: 350px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 2.8rem;
+    border-radius: var(--radius-pill);
+    border: none;
+    background-color: rgba(255, 255, 255, 0.3);
+    /* Semi-transparent */
+    font-family: var(--font-body);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 1rem;
+}
+
+.header-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.header-btn {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #4A3B32;
+    cursor: pointer;
+    background: transparent;
+    padding: 0.4rem 1rem;
+    border-radius: var(--radius-pill);
+    transition: all 0.2s;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.header-btn.highlight {
+    background-color: #B08D74;
+    color: white;
+}
+
+/* Menu Toggle (Hidden on Desktop) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    margin-left: auto; /* Push to right if needed in flex container */
+}
+
+/* Hero Section */
+.hero-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    padding: 5rem 5%;
+    align-items: center;
+}
+
+.hero-text h1 {
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 3.2rem;
+    color: #8B4513;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.hero-text p {
+    font-size: 0.95rem;
+    max-width: 450px;
+    margin-bottom: 2rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.pill-btn {
+    background-color: #A69B8F;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.pill-btn.primary {
+    background-color: #B08D74;
+}
+
+.hero-image {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+}
+
+.hero-image img {
+    border-radius: 20px;
+}
+
+/* Featured Books */
+.featured-section {
+    padding: 4rem 5%;
+    text-align: center;
+}
+
+.section-title-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 3rem;
+}
+
+.best-sellers-tag {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.65rem;
+    background: #A69B8F;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.featured-section h2 {
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: #4A3B32;
+}
+
+.books-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.book-card {
+    background: white;
+    border: 1px solid #444;
+    /* Dark border as seen in image */
+    border-radius: 8px;
+    /* Slightly less rounded */
+    width: 200px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* For the footer background */
+    transition: transform 0.3s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+}
+
+.book-cover-container {
+    width: 100%;
+    height: 280px;
+    /* Fixed height for cover area */
+    overflow: hidden;
+    position: relative;
+    background: #eee;
+}
+
+.book-cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.book-details {
+    background-color: #FCE4D6;
+    /* Pinkish/Beige footer */
+    padding: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top: 1px solid #444;
+}
+
+.book-title {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #8B4513;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.book-price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    background: transparent;
+    /* Remove previous bg */
+    padding: 0;
+}
+
+.price {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #4A3B32;
+}
+
+.btn-buy {
+    background-color: #A3BFA8;
+    /* Muted Green */
+    color: #2F4F2F;
+    border: 1px solid #7A997F;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.view-all-btn {
+    background-color: var(--accent-orange);
+    color: white;
+    padding: 0.8rem 3rem;
+    border-radius: 6px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(192, 74, 34, 0.4);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    transition: background 0.3s;
+}
+
+.view-all-btn:hover {
+    background-color: #A93226;
+}
+
+/* Store Locator */
+.store-locator {
+    padding: 6rem 5%;
+    text-align: center;
+    position: relative;
+}
+
+.locator-tag {
+    font-size: 0.65rem;
+    background: #A69B8F;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.store-locator h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #4A3B32;
+    margin-bottom: 3rem;
+}
+
+.locator-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.address-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.address-btn {
+    background-color: var(--accent-orange);
+    color: white;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: 0 10px 25px rgba(215, 65, 8, 0.3);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #A93226;
+    text-align: left;
+}
+
+.address-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(215, 65, 8, 0.4);
+}
+
+.address-btn i {
+    font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.address-text {
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+.map-container {
+    height: 450px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 5px solid #fff;
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    background: #EAEAEA;
+}
+
+.map-image-real {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Footer */
+.footer {
+    padding: 4rem 5%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #555;
+    margin-top: 4rem;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.footer-col strong {
+    margin-bottom: 0.5rem;
+    color: #4A3B32;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+}
+
+.footer-col span {
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.footer-col span:hover {
+    color: var(--accent-orange);
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.social-icons i {
+    font-size: 2rem;
+    color: #4A3B32;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.social-icons i:hover {
+    transform: scale(1.1);
+    color: var(--accent-orange);
+}
+
+/* --- MEDIA QUERIES --- */
+
+/* A. Pantallas tipo Tablet (601px - 1024px) */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    /* Cabecera: Logotipo y nombre separados */
+    .header-top {
+        justify-content: space-between;
+        padding: 1rem 2%;
+    }
+
+    /* Barra de navegación: Buscador debajo del menú */
+    .header-bottom {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .header-actions {
+        order: 1; /* Menú arriba */
+        width: 100%;
+        justify-content: center;
+    }
+
+    .search-wrapper {
+        order: 2; /* Buscador abajo */
+        width: 80%;
+    }
+
+    /* Catálogo: 2 o 3 productos por línea */
+    .book-card {
+        width: 45%; /* Aproximadamente 2 por fila con el gap */
+    }
+}
+
+/* B. Pantallas tipo Móvil (Hasta 600px) */
+@media screen and (max-width: 600px) {
+    /* Estructura General: Vertical */
+    .main-header {
+        position: relative;
+    }
+
+    .header-top {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .hero-section,
+    .locator-content {
+        grid-template-columns: 1fr;
+        padding: 3rem 5%;
+    /* Ocultar logotipo en página de productos (y general en móvil según requisito) */
+    .logo-circle {
+        display: none;
+    }
+
+    .header-bottom {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0.5rem 5%;
+    }
+
+    /* Menú de Hamburguesa */
+    .menu-toggle {
+        display: block;
+    }
+
+    .header-actions {
+        display: none; /* Oculto por defecto */
+        width: 100%;
+        flex-direction: column;
+        background-color: var(--header-bg);
+        padding: 1rem 0;
+        order: 3; /* Al final cuando se despliegue */
+    }
+
+    .header-actions.active {
+        display: flex; /* Mostrar al hacer clic */
+    }
+
+    /* Buscador independiente */
+    .search-wrapper {
+        width: 100%;
+        margin-bottom: 1rem;
+        order: 2; /* Debajo del toggle/header, encima del menú desplegado */
+        margin-top: 1rem;
+    }
+
+    /* Catálogo: 1 producto por fila */
+    .book-card {
+        width: 100%;
+    }
+
+    .footer {
+        flex-wrap: wrap;
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+}
+}

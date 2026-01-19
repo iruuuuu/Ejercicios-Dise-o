@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nebula Books</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header-top">
+            <div class="brand-section">
+                <div class="logo-text">Nebula <span>Books</span></div>
+            </div>
+            <div class="brand-right">
+                <!-- Circular logo placeholder -->
+                <div class="logo-circle">
+                    <img src="assets/logo.png" alt="Logo"> <!-- Placeholder hack -->
+                </div>
+            </div>
+        </div>
+
+        <div class="header-bottom">
+            <div class="search-wrapper">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" class="search-input" placeholder="Buscar libros, autores...">
+            </div>
+            <div class="header-actions">
+                <button class="header-btn highlight">Tu librería</button>
+                <a href="compra.html"><button class="header-btn">Compra On-line</button></a>
+                <button class="header-btn">Contacto</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-text">
+                <h1>Explora el futuro a través de las páginas</h1>
+                <p>Descubre las mejores obras de ciencia ficción, futurismo, y tecnología especulativa. Desde clásicos
+                    inmortales hasta las novedades más vanguardistas del género.</p>
+                <div class="hero-actions">
+                    <button class="pill-btn">Latest Release</button>
+                    <button class="pill-btn primary">Novedades</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets/hero_replacement.png" alt="Futuristic Library">
+            </div>
+        </section>
+
+        <section class="featured-section">
+            <div class="section-title-wrapper">
+                <span class="best-sellers-tag">Best Sellers</span>
+                <h2>Libros Destacados</h2>
+            </div>
+
+            <div class="books-grid">
+                <!-- Book 1 -->
+                <article class="book-card">
+                    <div class="book-cover-container">
+                        <img src="assets/book_1.png" alt="Un año en la Antigua Roma" class="book-cover-img">
+                    </div>
+                    <div class="book-details">
+                        <h3 class="book-title">Un año en la Antigua Roma</h3>
+                        <div class="book-price-row">
+                            <span class="price">14'50$</span>
+                            <button class="btn-buy">Comprar</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Book 2 -->
+                <article class="book-card">
+                    <div class="book-cover-container">
+                        <img src="assets/book_2.png" alt="Los Pilares de la Tierra" class="book-cover-img">
+                    </div>
+                    <div class="book-details">
+                        <h3 class="book-title">Los Pilares de la Tierra</h3>
+                        <div class="book-price-row">
+                            <span class="price">14'50$</span>
+                            <button class="btn-buy">Comprar</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Book 3 -->
+                <article class="book-card">
+                    <div class="book-cover-container">
+                        <img src="assets/book_3.png" alt="Los Pilares de la Tierra" class="book-cover-img">
+                    </div>
+                    <div class="book-details">
+                        <h3 class="book-title">Los Pilares de la Tierra</h3>
+                        <div class="book-price-row">
+                            <span class="price">14'50$</span>
+                            <button class="btn-buy">Comprar</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Book 4 -->
+                <article class="book-card">
+                    <div class="book-cover-container">
+                        <img src="assets/book_4.png" alt="Un Mundo sin Fin" class="book-cover-img">
+                    </div>
+                    <div class="book-details">
+                        <h3 class="book-title">Un Mundo sin Fin</h3>
+                        <div class="book-price-row">
+                            <span class="price">14'50$</span>
+                            <button class="btn-buy">Comprar</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <button class="view-all-btn">Ver todos</button>
+        </section>
+
+        <section class="store-locator">
+            <span class="locator-tag">Visítanos</span>
+            <h2>Encuentra tu tienda más cercana</h2>
+            <div class="locator-content">
+                <div class="address-list">
+                    <div class="address-btn">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span class="address-text">Calle del Despertar, 45</span>
+                    </div>
+                    <div class="address-btn">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span class="address-text">Avenida de los Tilos, 12</span>
+                    </div>
+                    <div class="address-btn">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span class="address-text">Plaza Mayor de Artes, 3</span>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <img src="assets/map_image.png" alt="Mapa de tiendas" class="map-image-real">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-col">
+            <strong>Servicios</strong>
+            <span>Restauración</span>
+            <span>Alquiler</span>
+            <span>Reservas</span>
+        </div>
+        <div class="footer-col">
+            <strong>Servicios</strong>
+            <span>Restauración</span>
+            <span>Alquiler</span>
+            <span>Reservas</span>
+        </div>
+        <div class="footer-col">
+            <strong>Servicios</strong>
+            <span>Restauración</span>
+            <span>Alquiler</span>
+            <span>Reservas</span>
+        </div>
+
+        <div class="footer-col">
+            <strong>Síguenos en nuestras redes sociales</strong>
+            <div class="social-icons">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-facebook-square"></i>
+                <i class="fa-brands fa-telegram"></i>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
