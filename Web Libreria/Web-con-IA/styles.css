@@ -562,6 +562,8 @@ a {
     .locator-content {
         grid-template-columns: 1fr;
         padding: 3rem 5%;
+    }
+
     /* Ocultar logotipo en página de productos (y general en móvil según requisito) */
     .logo-circle {
         display: none;
@@ -576,6 +578,10 @@ a {
     /* Menú de Hamburguesa */
     .menu-toggle {
         display: block;
+        font-size: 2rem;
+        color: #4A3B32; /* Ensure dark color */
+        padding: 0.5rem;
+        cursor: pointer;
     }
 
     .header-actions {
@@ -610,5 +616,4 @@ a {
         text-align: center;
         gap: 2rem;
     }
-}
 }
